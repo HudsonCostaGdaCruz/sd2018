@@ -52,7 +52,7 @@ public class ChatUI{
   }
   
   public static void main(String [] args){
-	System.out.println("Alô Mundo !");
+	System.out.println("Cliente startado!");
 	ChatUI c=new ChatUI();
   }  
   
