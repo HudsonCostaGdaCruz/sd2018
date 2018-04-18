@@ -10,8 +10,8 @@ public class ChatUI{
   private ChatServerInt server;
   public void doConnect(){
 	    if (connect.getText().equals("Conectar")){
-	    	if (name.getText().length()<2){JOptionPane.showMessageDialog(frame, "Você precisa digitar um nome."); return;}
-	    	if (ip.getText().length()<2){JOptionPane.showMessageDialog(frame, "Você precisa digitar um IP."); return;}	    	
+	    	if (name.getText().length()<2){JOptionPane.showMessageDialog(frame, "VocÃª precisa digitar um nome."); return;}
+	    	if (ip.getText().length()<2){JOptionPane.showMessageDialog(frame, "VocÃª precisa digitar um IP."); return;}	    	
 	    	try{
 				client=new ChatClient(name.getText());
 	    		client.setGUI(this);
@@ -19,7 +19,7 @@ public class ChatUI{
 				server.login(client);
 				updateUsers(server.getConnected());
 			    connect.setText("Disconectar");			    
-	    	}catch(Exception e){e.printStackTrace();JOptionPane.showMessageDialog(frame, "Não foi possível conectar.");}		  
+	    	}catch(Exception e){e.printStackTrace();JOptionPane.showMessageDialog(frame, "NÃ£o foi possÃ­vel conectar.");}		  
 	      }else{
 	    	  	updateUsers(null);
 	    	  	connect.setText("Conectar");
@@ -28,7 +28,7 @@ public class ChatUI{
   
   public void sendText(){
     if (connect.getText().equals("Conectar")){
-    	JOptionPane.showMessageDialog(frame, "Você precisa se conectar primeiro."); return;	
+    	JOptionPane.showMessageDialog(frame, "VocÃª precisa se conectar primeiro."); return;	
     }
       String st=tf.getText();
       st="["+name.getText()+"] "+st;
@@ -52,7 +52,7 @@ public class ChatUI{
   }
   
   public static void main(String [] args){
-	System.out.println("Alô Mundo !");
+	System.out.println("AlÃ´ Mundo !");
 	ChatUI c=new ChatUI();
   }  
   
@@ -73,8 +73,8 @@ public class ChatUI{
 	    top.setLayout(new GridLayout(1,0,5,5));   
 	    cn.setLayout(new BorderLayout(5,5));
 	    bottom.setLayout(new BorderLayout(5,5));
-	    top.add(new JLabel("Seu nome: "));top.add(name);    
-	    top.add(new JLabel("Endereço do servidor: "));top.add(ip);
+	    top.add(new JLabel("Nome: "));top.add(name);    
+	    top.add(new JLabel("EndereÃ§o do servidor: "));top.add(ip);
 	    top.add(connect);
 	    cn.add(new JScrollPane(tx), BorderLayout.CENTER);        
 	    cn.add(lst, BorderLayout.EAST);    
